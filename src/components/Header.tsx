@@ -7,8 +7,8 @@ const Header = () => {
   return (
     <header>
       <Pattern />
-      <PageHeading />
       <Logo />
+      <PageHeading />
       <FeedbackForm />
     </header>
   );

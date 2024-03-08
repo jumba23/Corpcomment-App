@@ -1,6 +1,6 @@
 const Logo = () => {
   return (
-    <a>
+    <a href="/" className="logo">
       <img src="https://bytegrad.com/course-assets/js/1/logo.svg" alt="Logo" />
     </a>
   );
