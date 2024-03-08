@@ -1,5 +1,5 @@
 const FeedbackList = () => {
-  return <div>FeedbackList</div>;
+  return <ol className="feedback-list">FeedbackList</ol>;
 };
 
 export default FeedbackList;

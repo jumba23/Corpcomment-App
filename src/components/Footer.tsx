@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footer">
       <small>
         <p>
           © Copyright by{" "}
