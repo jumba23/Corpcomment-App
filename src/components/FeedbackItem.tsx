@@ -1,7 +1,7 @@
 import { TriangleUpIcon } from "@radix-ui/react-icons";
 
 type FeedbackItem = {
-  upVoteCount: number;
+  upvoteCount: number;
   badgeLetter: string;
   companyName: string;
   text: string;
@@ -17,7 +17,7 @@ const FeedbackItem = ({ feedbackItem }: FeedbackItemProps) => {
     <li className="feedback">
       <button>
         <TriangleUpIcon />
-        <span>{feedbackItem.upVoteCount}</span>
+        <span>{feedbackItem.upvoteCount}</span>
       </button>
       <div>
         <p>{feedbackItem.badgeLetter}</p>
