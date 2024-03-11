@@ -1,8 +1,11 @@
+import { TriangleUpIcon } from "@radix-ui/react-icons";
+
 const FeedbackList = () => {
   return (
     <ol className="feedback-list">
       <li className="feedback">
         <button>
+          <TriangleUpIcon />
           <span>568</span>
         </button>
         <div>
