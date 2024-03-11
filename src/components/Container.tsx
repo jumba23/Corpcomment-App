@@ -1,11 +1,28 @@
+import { TFeedbackItem } from "../lib/types";
 import FeedbackList from "./FeedbackList";
 import Header from "./Header";
 
-const Container = () => {
+type ContainerProps = {
+  feedbackItems: TFeedbackItem[];
+  isLoading: boolean;
+  errorMessage: string;
+  handleAddToList: (text: string) => void;
+};
+
+const Container = ({
+  feedbackItems,
+  isLoading,
+  errorMessage,
+  handleAddToList,
+}: ContainerProps) => {
   return (
     <main className="container">
-      <Header />
-      <FeedbackList />
+      <Header handleAddToList={handleAddToList} />
+      <FeedbackList
+        feedbackItems={feedbackItems}
+        isLoading={isLoading}
+        errorMessage={errorMessage}
+      />
     </main>
   );
 };
