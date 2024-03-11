@@ -12,9 +12,10 @@ const FeedbackList = () => {
   const handleAddToList = (text: string) => {
     const companyName = text
       .split(" ")
-      .find((word) => word.includes("@"))
+      .find((word) => word.includes("@"))!
       .substring(1);
     const newItem: TFeedbackItem = {
+      id: new Date().getTime(),
       text: text,
       upvoteCount: 0,
       daysAgo: 0,
