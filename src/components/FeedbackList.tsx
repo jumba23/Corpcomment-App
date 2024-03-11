@@ -27,32 +27,13 @@ const FeedbackList = () => {
       }
     };
     fetchFeedbackItems();
-
-    // setIsLoading(true);
-    // fetch(
-    //   "https://bytegrad.com/course-assets/projects/corpcomment/api/feedbacks"
-    // )
-    //   .then((res) => {
-    //     if (!res.ok) {
-    //       throw new Error("Something went wrong. Please try again later.");
-    //     }
-    //     return res.json();
-    //   })
-    //   .then((data) => {
-    //     setFeedbackItems(data.feedbacks);
-    //     setIsLoading(false);
-    //   })
-    //   .catch(() => {
-    //     setErrorMessage("Something went wrong. Please try again later.");
-    //     setIsLoading(false);
-    //   });
   }, []);
 
   return (
     <ol className="feedback-list">
-      {isLoading ? <Spinner /> : null}
+      {isLoading && <Spinner />}
 
-      {errorMessage ? <ErrorMessage message={errorMessage} /> : null}
+      {errorMessage && <ErrorMessage message={errorMessage} />}
 
       {feedbackItems.map((feedbackItem) => (
         <FeedbackItem key={feedbackItem.id} feedbackItem={feedbackItem} />
