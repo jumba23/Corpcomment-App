@@ -1,7 +1,12 @@
-const HashtagList = () => {
+const HashtagList = ({ companyList }) => {
   return (
     <ul className="hashtags">
-      <li>
+      {companyList.map((company, index) => (
+        <li key={index}>
+          <button>#{company}</button>
+        </li>
+      ))}
+      {/* <li>
         <button>#SoftSolutions</button>
       </li>
       <li>
@@ -9,7 +14,7 @@ const HashtagList = () => {
       </li>
       <li>
         <button>#McDonald's</button>
-      </li>
+      </li> */}
     </ul>
   );
 };

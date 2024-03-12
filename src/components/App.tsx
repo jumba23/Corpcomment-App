@@ -9,6 +9,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
+  const companyList = feedbackItems.map((item) => item.company);
+
   const handleAddToList = async (text: string) => {
     const companyNameWord = text.split(" ").find((word) => word.includes("#"));
     if (!companyNameWord) {
@@ -67,7 +69,7 @@ function App() {
         errorMessage={errorMessage}
         handleAddToList={handleAddToList}
       />
-      <HashtagList />
+      <HashtagList companyList={companyList} />
     </div>
   );
 }
