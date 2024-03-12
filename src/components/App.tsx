@@ -8,6 +8,13 @@ function App() {
   const [feedbackItems, setFeedbackItems] = useState<TFeedbackItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const [selectedCompany, setSelectedCompany] = useState("");
+
+  const filteredFeedbackItems = selectedCompany
+    ? feedbackItems.filter(
+        (feedbackItem) => feedbackItem.company === selectedCompany
+      )
+    : feedbackItems;
 
   const companyList = feedbackItems
     .map((item) => item.company)
@@ -66,7 +73,7 @@ function App() {
     <div className="app">
       <Footer />
       <Container
-        feedbackItems={feedbackItems}
+        feedbackItems={filteredFeedbackItems}
         isLoading={isLoading}
         errorMessage={errorMessage}
         handleAddToList={handleAddToList}
