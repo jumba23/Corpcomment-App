@@ -6,15 +6,6 @@ const HashtagList = ({ companyList }) => {
           <button>#{company}</button>
         </li>
       ))}
-      {/* <li>
-        <button>#SoftSolutions</button>
-      </li>
-      <li>
-        <button>#Nike</button>
-      </li>
-      <li>
-        <button>#McDonald's</button>
-      </li> */}
     </ul>
   );
 };
