@@ -2,13 +2,20 @@ import HashtagItem from "./HashtagItem";
 
 type hashtagListProps = {
   companyList: string[];
+  handleSelectCompany: (company: string) => void;
 };
 
-const HashtagList = ({ companyList }: hashtagListProps) => {
+const HashtagList = ({
+  companyList,
+  handleSelectCompany,
+}: hashtagListProps) => {
   return (
     <ul className="hashtags">
       {companyList.map((company) => (
-        <HashtagItem company={company} />
+        <HashtagItem
+          company={company}
+          onSelectedCompany={handleSelectCompany}
+        />
       ))}
     </ul>
   );

@@ -49,6 +49,10 @@ function App() {
     );
   };
 
+  const handleSelectCompany = (company: string) => {
+    setSelectedCompany(company);
+  };
+
   useEffect(() => {
     const fetchFeedbackItems = async () => {
       setIsLoading(true);
@@ -78,7 +82,10 @@ function App() {
         errorMessage={errorMessage}
         handleAddToList={handleAddToList}
       />
-      <HashtagList companyList={companyList} />
+      <HashtagList
+        companyList={companyList}
+        handleSelectCompany={handleSelectCompany}
+      />
     </div>
   );
 }
