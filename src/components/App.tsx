@@ -9,6 +9,7 @@ function App() {
     (state) => state.fetchFeedbackItems
   );
 
+  // Fetch feedback items when the app component mounts
   useEffect(() => {
     fetchFeedbackItems();
   }, [fetchFeedbackItems]);
