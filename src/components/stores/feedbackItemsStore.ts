@@ -1,9 +1,21 @@
 import { create } from "zustand";
 import { TFeedbackItem } from "../../lib/types";
 
+type Store = {
+  feedbackItems: TFeedbackItem[];
+  isLoading: boolean;
+  errorMessage: string;
+  selectedCompany: string;
+  getCompanyList: () => string[];
+  getFilteredFeedbackItems: () => TFeedbackItem[];
+  addItemsToList: (text: string) => Promise<void>;
+  selectCompany: (company: string) => void;
+  fetchFeedbackItems: () => Promise<void>;
+};
+
 // "set" is used to update the state in zustand
 // "get" is used to read the state in zustand
-export const useFeedbackItemsStore = create((set, get) => ({
+export const useFeedbackItemsStore = create<Store>((set, get) => ({
   // Initial state
   feedbackItems: [],
   isLoading: false,
