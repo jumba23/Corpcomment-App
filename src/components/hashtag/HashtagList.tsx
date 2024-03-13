@@ -4,7 +4,7 @@ import HashtagItem from "./HashtagItem";
 const HashtagList = () => {
   // const { companyList, handleSelectCompany } = useFeedbackItemsContext();
   const companyList = useFeedbackItemsStore((state) => state.getCompanyList());
-  const selectCompany = useFeedbackItemsStore((state) => state.selectedCompany);
+  const selectCompany = useFeedbackItemsStore((state) => state.selectCompany);
 
   return (
     <ul className="hashtags">
